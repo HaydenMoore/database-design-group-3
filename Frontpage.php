@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html> 
-<body >
-<div style="min-height:900px; background-color: lightgray;" align="center">
-<br><br><br><br>
+<head>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div align="center">
 <?php include('Navigation.html'); ?>
 <h1>About the Project</h1>
 <p>

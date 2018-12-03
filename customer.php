@@ -2,11 +2,13 @@
 <html>
 
    <head>
-      <title>Update InstructorSalary in MySQL Database</title>
+		<title>Update InstructorSalary in MySQL Database</title>
+		<link rel="stylesheet" href="main.css">
    </head>
 
    <body>
-   <div style="height:900px; background-color: lightblue;" align="center">
+   <div align="center">
+      <?php include('Navigation.html'); ?>
       <?php
 	  
 		require("public_html/tableshow.php");
