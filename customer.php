@@ -10,39 +10,14 @@
    <div align="center">
       <?php include('Navigation.html'); ?>
       <?php
-	  
+
+		require("public_html/dbconnect.php");	  
 		require("public_html/tableshow.php");
-		require("public_html/dbconnect.php");
-	  
-         if(isset($_POST['update'])) {
-            
-            $i_ID = $_POST['i_ID'];
-			
-			echo " <br> Instructor table before update <br>";
-			show_instructor($conn);
-   
-            $sql = "UPDATE instructor SET salary = salary * 1.10 WHERE ID = ".$i_ID."";
-            
-            $retval = mysqli_query($conn, $sql);
-         
-            if(! $retval ) {
-               die('Could not delete data: ' . mysqli_error($conn));
-            }
-         
-            echo "Updated instructor salary successfully\n";
-			
-			echo " <br> Instructor table after update <br>";
-			show_instructor($conn);
-			
-            mysqli_close($conn);
-         } 
-		 else if(isset($_POST['show'])){
-			 
-			 show_instructor($conn);
-		 }	 
-		 
-		 else {
-      ?>
+				
+		show_customer($conn);
+		show_supplier($conn);
+
+		?>
 	  <br><br><br><br>
      <p>Enter Instructor information for update <br> </p>
       <form method = "post" action = "<?php $_PHP_SELF ?>">
@@ -67,14 +42,6 @@
             </tr>
 			
          </table>
-   
-	  
-   <?php
-      }
-   ?>
-   <hr width="50">
-<a href="Frontpage.html" style="color:red;font-weight:bold;">Home</a>
-<hr width="50">
    </div>
    
    </body>

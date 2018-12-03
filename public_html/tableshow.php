@@ -1,10 +1,9 @@
 <?php
 
-function show_instructor($conn){
+function show_customer($conn){
 
-//include "dbconnect.php";
 
-$sql = "SELECT id, name, dept_name, salary FROM instructor";
+$sql = "SELECT customer_id, customer_name from customers";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -13,16 +12,14 @@ if ($result->num_rows > 0) {
 	
 	echo '<table border>';
 	echo '<thead><tr>';
-	echo '<th>'."ID".'</th>'.'<th>'."Name".'</th>'.'<th>'."Department".'</th>'.'<th>'."Salary".'</th>';
+	echo '<th>'."ID".'</th>'.'<th>'."Name".'</th>';
 	echo '</tr></thead>';
 	echo '<tbody>';
 
 	while($row = $result->fetch_assoc()) {
 		echo '<tr>';
-        echo "<td>" . $row["id"]. "</td>";
-		echo "<td>" . $row["name"]. "</td>";
-		echo "<td>" . $row["dept_name"]. "</td>";
-		echo "<td>" . $row["salary"]. "</td>";
+        echo "<td>" . $row["customer_id"]. "</td>";
+		echo "<td>" . $row["customer_name"]. "</td>";
 		echo '</tr>';
     }
 	
@@ -37,4 +34,42 @@ if ($result->num_rows > 0) {
 }
 //$conn->close();
 }
+
+function show_supplier($conn){
+
+
+$sql = "SELECT supplier_id, supplier_name from supplier";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+	
+	echo "<br><h3> Supplier Table<h3> <br>";
+	
+	echo '<table border>';
+	echo '<thead><tr>';
+	echo '<th>'."ID".'</th>'.'<th>'."Name".'</th>';
+	echo '</tr></thead>';
+	echo '<tbody>';
+
+	while($row = $result->fetch_assoc()) {
+		echo '<tr>';
+        echo "<td>" . $row["supplier_id"]. "</td>";
+		echo "<td>" . $row["supplier_name"]. "</td>";
+		echo '</tr>';
+    }
+	
+	echo '</tbody>';
+	echo '</table>';
+	
+    // output data of each row
+    
+	
+} else {
+    echo "0 results";
+}
+//$conn->close();
+}
+
+
+
 ?>
