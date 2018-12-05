@@ -24,7 +24,7 @@
 			echo " <br> Departments table before deletion <br>";
 			show_departments($conn);
    
-            $sql = "DELETE FROM departments WHERE dept_name=".$i_name."";
+            $sql = "DELETE FROM departments WHERE dept_name='".$i_name."'";
             
 			//mysqli_select_db($conn,'university');
             $retval = mysqli_query($conn, $sql);
