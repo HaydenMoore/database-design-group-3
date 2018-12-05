@@ -70,15 +70,15 @@ if ($result->num_rows > 0) {
 //$conn->close();
 }
 
-function show_department($conn){
+function show_departments($conn){
 
 
-$sql = "SELECT dept_name from department";
+$sql = "SELECT dept_name from departments";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
 	
-	echo "<br><h3> Department Table<h3> <br>";
+	echo "<br><h3> Departments Table<h3> <br>";
 	
 	echo '<table border>';
 	echo '<thead><tr>';
@@ -88,7 +88,7 @@ if ($result->num_rows > 0) {
 
 	while($row = $result->fetch_assoc()) {
 		echo '<tr>';
-		echo "<td>" . $row["department_name"]. "</td>";
+		echo "<td>" . $row["dept_name"]. "</td>";
 		echo '</tr>';
     }
 	

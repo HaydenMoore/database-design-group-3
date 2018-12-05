@@ -2,7 +2,7 @@
 <html> 
 
 	<head>
-      <title>Department Page</title>
+      <title>Departments Page</title>
 	  <link rel="stylesheet" href="main.css">
 	</head>
 
@@ -12,8 +12,8 @@
 <br>
 <p>Here is the list of our departments. Make additions, deletions, or updates when needed. <br> </p>
 <tr>
-<td><a href="supplier_insert.php" style="color:blue;font-weight:bold;">Insert </a> &nbsp&nbsp&nbsp&nbsp;</td>
-<td><a href="supplier_delete.php" style="color:blue;font-weight:bold;">Delete </a> &nbsp&nbsp&nbsp&nbsp;</td>
+<td><a href="departments_insert.php" style="color:blue;font-weight:bold;">Insert </a> &nbsp&nbsp&nbsp&nbsp;</td>
+<td><a href="departments_delete.php" style="color:blue;font-weight:bold;">Delete </a> &nbsp&nbsp&nbsp&nbsp;</td>
 <td><a href="update.php" style="color:blue;font-weight:bold;">Update </a> &nbsp&nbsp&nbsp&nbsp;</td>
 </tr>
 <table>
@@ -21,7 +21,7 @@
 		require("public_html/dbconnect.php");	  
 		require("public_html/tableshow.php");
 				
-		show_department($conn);
+		show_departments($conn);
 		?>
 
 </div>
