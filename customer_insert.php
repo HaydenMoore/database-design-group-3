@@ -21,8 +21,8 @@
             $i_dept = $_POST['i_dept'];
             
    
-            $sql = "INSERT INTO customer ".
-               "(UPC, customer_name) "."VALUES ".
+            $sql = "INSERT INTO customers ".
+               "(customer_ID, customer_name) "."VALUES ".
                "('$i_UPC','$i_dept')";
             
 			//mysqli_select_db($conn,'university');
@@ -35,13 +35,13 @@
             echo "Entered data successfully\n";
 			
 			echo " <br> Customer table after insertion <br>";
-			show_inventory($conn);
+			show_customer($conn);
 			
             mysqli_close($conn);
          } 
 		 else if(isset($_POST['show'])){
 			 
-			 show_inventory($conn);
+			show_customer($conn);
 		 }	 
 		 
 		 else {
