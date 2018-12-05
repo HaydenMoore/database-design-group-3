@@ -179,7 +179,7 @@ if ($result->num_rows > 0) {
             
             
         } else {
-            echo $result->num_rows;
+             echo "0 results";
         }
         //$conn->close();
     }
@@ -217,7 +217,7 @@ if ($result->num_rows > 0) {
             
             
         } else {
-            echo $result->num_rows;
+    	       echo "0 results";
         }
         //$conn->close();
     }
