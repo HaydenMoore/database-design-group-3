@@ -5,7 +5,7 @@
 <?php include('Navigation.html'); ?>
 <br>
 	<head>
-      <title>Create Order</title>
+      <title>Create Refund</title>
 	  <link rel="stylesheet" href="main.css">
 	</head>
 <br><br><br><br>
@@ -16,16 +16,17 @@
 	  
          if(isset($_POST['add'])) {
             
-            $i_orderID = $_POST['i_orderID'];
+            $i_returnID = $_POST['i_returnID'];
+	    $i_orderID = $_POST['i_orderID'];
             $i_UPC = $_POST['i_UPC'];
             $i_customerID = $_POST['i_customerID'];
             $i_employeeID = $_POST['i_employeeID'];
             $i_quanity = $_POST['i_quanity'];
             
    
-            $sql = "INSERT INTO Orders ".
-               "(order_ID, UPC, customer_id, employee_id, quanity) "."VALUES ".
-               "('$i_orderID','$i_UPC','$i_customerID', '$i_employeeID', '$i_quanity')";
+            $sql = "INSERT INTO Refunds ".
+               "(return_id, order_ID, UPC, customer_id, employee_id, quanity) "."VALUES ".
+               "('$i_returnID','$i_orderID','$i_UPC','$i_customerID', '$i_employeeID', '$i_quanity')";
             
             $retval = mysqli_query($conn, $sql);
          
@@ -34,7 +35,7 @@
             }
          
             echo "Entered data successfully\n";
-             $sql = "update Inventory set quantity=quantity-($i_quanity) where UPC = "."($i_UPC)";
+             $sql = "update Inventory set quantity=quantity+($i_quanity) where UPC = "."($i_UPC)";
              
              $retval = mysqli_query($conn, $sql);
              
@@ -42,8 +43,8 @@
                  die('Could not enter data: ' . mysqli_error($conn));
              }
              
-			echo " <br> Order table after insertion <br>";
-			show_orders($conn);
+			echo " <br> Refund table after insertion <br>";
+			show_refunds($conn);
 			
             mysqli_close($conn);
          } 
@@ -59,6 +60,13 @@
       <form method = "post" action = "<?php $_PHP_SELF ?>">
          <table width = "600" border = "0" cellspacing = "1" cellpadding = "2">
             <tr>
+               <td width = "250">Refund ID</td>
+               <td>
+                  <input name = "i_returnID" type = "text" id = "i_returnID">
+               </td>
+            </tr>
+         
+ <tr>
                <td width = "250">Order ID</td>
                <td>
                   <input name = "i_orderID" type = "text" id = "i_orderID">

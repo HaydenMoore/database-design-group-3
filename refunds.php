@@ -2,7 +2,7 @@
 <html>
 
 <head>
-<title>Supplier Page</title>
+<title>Refund Page</title>
 <link rel="stylesheet" href="main.css">
 </head>
 
@@ -12,8 +12,8 @@
 <br>
 <p>Choose the function to either create, delete, or display info for refunds. <br> </p>
 <tr>
-<td><a href="order_insert.php" style="color:blue;font-weight:bold;">Create </a> &nbsp&nbsp&nbsp&nbsp;</td>
-<td><a href="order_display.php" style="color:blue;font-weight:bold;">Display</a> &nbsp&nbsp&nbsp&nbsp;</td>
+<td><a href="refund_insert.php" style="color:blue;font-weight:bold;">Create </a> &nbsp&nbsp&nbsp&nbsp;</td>
+<td><a href="refund_display.php" style="color:blue;font-weight:bold;">Display</a> &nbsp&nbsp&nbsp&nbsp;</td>
 </tr>
 <table>
 <?php
