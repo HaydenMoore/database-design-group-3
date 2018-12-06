@@ -19,7 +19,7 @@
            
             $i_UPC = $_POST['i_UPC'];
    
-            $sql = "DELETE FROM customer WHERE UPC = ".$i_UPC."";
+            $sql = "DELETE FROM customers WHERE customer_id = ".$i_UPC."";
             
 			//mysqli_select_db($conn,'university');
             $retval = mysqli_query($conn, $sql);
