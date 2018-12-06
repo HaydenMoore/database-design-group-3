@@ -20,7 +20,7 @@
 		require("public_html/dbconnect.php");	  
 		require("public_html/tableshow.php");
 				
-		show_refunds($conn);
+		show_orders($conn);
 		?>
 
 </div>
