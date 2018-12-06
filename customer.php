@@ -14,7 +14,6 @@
 <tr>
 <td><a href="customer_insert.php" style="color:blue;font-weight:bold;">Insert </a> &nbsp&nbsp&nbsp&nbsp;</td>
 <td><a href="customer_delete.php" style="color:blue;font-weight:bold;">Delete </a> &nbsp&nbsp&nbsp&nbsp;</td>
-<td><a href="customer_update.php" style="color:blue;font-weight:bold;">Update </a> &nbsp&nbsp&nbsp&nbsp;</td>
 </tr>
 <table>
 <?php
