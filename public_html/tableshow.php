@@ -149,7 +149,7 @@ if ($result->num_rows > 0) {
     function show_orders($conn){
         
         
-        $sql = "SELECT * from orders";
+        $sql = "SELECT order_id, UPC, customer_id, customer_name, employee_id, quanity from orders natural left outer join customers";
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
@@ -158,7 +158,7 @@ if ($result->num_rows > 0) {
             
             echo '<table border>';
             echo '<thead><tr>';
-            echo '<th>'."Order ID".'</th>'.'<th>'."UPC".'</th>'.'<th>'."Customer ID".'</th>'.'<th>'."Employee ID".'</th>'.'<th>'."Quantity".'</th>';
+            echo '<th>'."Order ID".'</th>'.'<th>'."UPC".'</th>'.'<th>'."Customer ID".'</th>'.'<th>'."Customer Name".'</th>'.'<th>'."Employee ID".'</th>'.'<th>'."Quantity".'</th>';
             echo '</tr></thead>';
             echo '<tbody>';
             
@@ -167,6 +167,7 @@ if ($result->num_rows > 0) {
                 echo "<td>" . $row["order_id"]. "</td>";
                 echo "<td>" . $row["UPC"]. "</td>";
                 echo "<td>" . $row["customer_id"]. "</td>";
+		echo "<td>" . $row["customer_name"]. "</td>";
                 echo "<td>" . $row["employee_id"]. "</td>";
                 echo "<td>" . $row["quanity"]. "</td>";
                 echo '</tr>';
@@ -187,7 +188,7 @@ if ($result->num_rows > 0) {
     function show_refunds($conn){
         
         
-        $sql = "SELECT * from refunds";
+        $sql = "SELECT return_id, order_id, UPC, customer_id, customer_name, employee_id, quanity from refunds natural left outer join customers";
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
@@ -196,15 +197,17 @@ if ($result->num_rows > 0) {
             
             echo '<table border>';
             echo '<thead><tr>';
-            echo '<th>'."Return ID".'</th>'.'<th>'."UPC".'</th>'.'<th>'."Customer ID".'</th>'.'<th>'."Employee ID".'</th>'.'<th>'."Quantity".'</th>';
+            echo '<th>'."Return ID".'</th>'.'<th>'."Order ID".'</th>'.'<th>'."Customer ID".'</th>'.'<th>'."Customer Name".'</th>'.'<th>'."UPC".'</th>'.'<th>'."Employee ID".'</th>'.'<th>'."Quantity".'</th>';
             echo '</tr></thead>';
             echo '<tbody>';
             
             while($row = $result->fetch_assoc()) {
                 echo '<tr>';
                 echo "<td>" . $row["return_id"]. "</td>";
-                echo "<td>" . $row["UPC"]. "</td>";
+                echo "<td>" . $row["order_id"]. "</td>";
                 echo "<td>" . $row["customer_id"]. "</td>";
+                echo "<td>" . $row["customer_name"]. "</td>";
+                echo "<td>" . $row["UPC"]. "</td>";
                 echo "<td>" . $row["employee_id"]. "</td>";
                 echo "<td>" . $row["quanity"]. "</td>";
                 echo '</tr>';
