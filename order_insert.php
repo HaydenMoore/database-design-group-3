@@ -34,7 +34,7 @@
             }
          
             echo "Entered data successfully\n";
-             $sql = "update Inventory set quantity=quantity-($i_quanity) where UPC = "."($i_UPC)";
+             $sql = "update inventory set quantity=quantity-($i_quanity) where UPC = "."($i_UPC)";
              
              $retval = mysqli_query($conn, $sql);
              
