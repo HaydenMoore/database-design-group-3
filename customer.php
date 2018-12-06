@@ -10,7 +10,7 @@
 <div align="center">
 <?php include('Navigation.html'); ?>
 <br>
-<p>Here is the list of our inventory. Make additions, deletions, or updates when needed. <br> </p>
+<p>Here is the list of our customers. Make additions, deletions when needed. <br> </p>
 <tr>
 <td><a href="customer_insert.php" style="color:blue;font-weight:bold;">Insert </a> &nbsp&nbsp&nbsp&nbsp;</td>
 <td><a href="customer_delete.php" style="color:blue;font-weight:bold;">Delete </a> &nbsp&nbsp&nbsp&nbsp;</td>

@@ -1,11 +1,47 @@
 body{
 	min-height:900px; 
-	background-color: lightgray;
+	background-color: #333333;
+}
+
+.topnav h1{
+	color: #333;
+    font-weight: 900;
+    font-size: 65px;
+	margin: 0px;
+
 }
 
 .topnav{
-	background-color: darkgray;
+	background-color: #00ff99;
+	border-radius: 10px;
 }
+
+.content{
+	padding-bottom: 100%;
+}
+
+
+.content{
+	background-color: white;
+}
+
+*{
+    font-family: courier;
+}
+
+table, th, td {
+	border-collapse: collapse;
+	border: 1px solid #ddd;
+}
+
+th, td {
+  border-bottom: 1px solid #888;
+    padding: 5px;
+  text-align: left;
+}
+
+tr:hover {background-color: #f5f5f5;}
+
 
 ul {
   list-style-type: none;
@@ -13,6 +49,8 @@ ul {
   padding: 0;
   overflow: hidden;
   background-color: #f1f1f1;
+  border-bottom: 1px solid #bbb;
+
   
 }
 
