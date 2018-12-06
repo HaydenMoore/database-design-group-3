@@ -10,10 +10,9 @@
 <div align="center">
 <?php include('Navigation.html'); ?>
 <br>
-<p>Choose the function to either create, delete, or display info for refunds. <br> </p>
+<p>Click the the link to create refund. <br> </p>
 <tr>
 <td><a href="refund_insert.php" style="color:blue;font-weight:bold;">Create </a> &nbsp&nbsp&nbsp&nbsp;</td>
-<td><a href="refund_display.php" style="color:blue;font-weight:bold;">Display</a> &nbsp&nbsp&nbsp&nbsp;</td>
 </tr>
 <table>
 <?php
