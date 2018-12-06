@@ -149,7 +149,7 @@ if ($result->num_rows > 0) {
     function show_orders($conn){
         
         
-        $sql = "SELECT * from Orders";
+        $sql = "SELECT * from orders";
         $result = $conn->query($sql);
         
         if ($result->num_rows > 0) {
