@@ -23,7 +23,7 @@
             $i_quanity = $_POST['i_quanity'];
             
    
-            $sql = "INSERT INTO Orders ".
+            $sql = "INSERT INTO orders ".
                "(order_ID, UPC, customer_id, employee_id, quanity) "."VALUES ".
                "('$i_orderID','$i_UPC','$i_customerID', '$i_employeeID', '$i_quanity')";
             
@@ -34,7 +34,7 @@
             }
          
             echo "Entered data successfully\n";
-             $sql = "update Inventory set quantity=quantity-($i_quanity) where UPC = "."($i_UPC)";
+             $sql = "update inventory set quantity=quantity-($i_quanity) where UPC = "."($i_UPC)";
              
              $retval = mysqli_query($conn, $sql);
              

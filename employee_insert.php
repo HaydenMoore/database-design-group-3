@@ -23,7 +23,7 @@
             $i_dept = $_POST['i_dept'];
             
    
-            $sql = "INSERT INTO Employee ".
+            $sql = "INSERT INTO employee ".
                "(employee_id, employee_name, positition, dept_name) "."VALUES ".
                "('$i_ID','$i_name','$i_post', '$i_dept')";
             

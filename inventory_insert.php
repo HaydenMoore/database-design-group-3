@@ -23,7 +23,7 @@
             $i_quant = $_POST['i_quant'];
             
    
-            $sql = "INSERT INTO Inventory ".
+            $sql = "INSERT INTO inventory ".
                "(UPC, dept_name, supplier_id, quantity) "."VALUES ".
                "('$i_UPC','$i_dept','$i_ID', '$i_quant')";
             
