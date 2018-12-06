@@ -146,6 +146,81 @@ if ($result->num_rows > 0) {
 //$conn->close();
 }
 
+    function show_orders($conn){
+        
+        
+        $sql = "SELECT * from Orders";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            
+            echo "<br><h3> Order Table<h3> <br>";
+            
+            echo '<table border>';
+            echo '<thead><tr>';
+            echo '<th>'."Order ID".'</th>'.'<th>'."UPC".'</th>'.'<th>'."Customer ID".'</th>'.'<th>'."Employee ID".'</th>'.'<th>'."Quantity".'</th>';
+            echo '</tr></thead>';
+            echo '<tbody>';
+            
+            while($row = $result->fetch_assoc()) {
+                echo '<tr>';
+                echo "<td>" . $row["order_id"]. "</td>";
+                echo "<td>" . $row["UPC"]. "</td>";
+                echo "<td>" . $row["customer_id"]. "</td>";
+                echo "<td>" . $row["employee_id"]. "</td>";
+                echo "<td>" . $row["quanity"]. "</td>";
+                echo '</tr>';
+            }
+            
+            echo '</tbody>';
+            echo '</table>';
+            
+            // output data of each row
+            
+            
+        } else {
+             echo "0 results";
+        }
+        //$conn->close();
+    }
+
+    function show_refunds($conn){
+        
+        
+        $sql = "SELECT * from refunds";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            
+            echo "<br><h3> Refunds Table<h3> <br>";
+            
+            echo '<table border>';
+            echo '<thead><tr>';
+            echo '<th>'."Return ID".'</th>'.'<th>'."UPC".'</th>'.'<th>'."Customer ID".'</th>'.'<th>'."Employee ID".'</th>'.'<th>'."Quantity".'</th>';
+            echo '</tr></thead>';
+            echo '<tbody>';
+            
+            while($row = $result->fetch_assoc()) {
+                echo '<tr>';
+                echo "<td>" . $row["return_id"]. "</td>";
+                echo "<td>" . $row["UPC"]. "</td>";
+                echo "<td>" . $row["customer_id"]. "</td>";
+                echo "<td>" . $row["employee_id"]. "</td>";
+                echo "<td>" . $row["quanity"]. "</td>";
+                echo '</tr>';
+            }
+            
+            echo '</tbody>';
+            echo '</table>';
+            
+            // output data of each row
+            
+            
+        } else {
+    	       echo "0 results";
+        }
+        //$conn->close();
+    }
 
 function show_departments($conn){
 

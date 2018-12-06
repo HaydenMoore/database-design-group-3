@@ -5,26 +5,22 @@
 <?php include('Navigation.html'); ?>
 <br>
 	<head>
-      <title>Delete Record in Departments Table</title>
+      <title>Update Record in Employee Table</title>
 	  <link rel="stylesheet" href="main.css">
 	</head>
 <br><br><br><br>
 
 	<?php
-	  
-		require("public_html/dbconnect.php");	  
 		require("public_html/tableshow.php");
+		require("public_html/dbconnect.php");
 	  
          if(isset($_POST['add'])) {
             
-            
-            $i_name = $_POST['i_name'];
-            
-			
-			echo " <br> Departments table before deletion <br>";
-			show_departments($conn);
+           
+            $i_UPC = $_POST['i_UPC'];
+             $i_UPC_U = $_POST['i_UPC_U'];
    
-            $sql = "DELETE FROM departments WHERE dept_name='".$i_name."'";
+             $sql = "UPDATE inventory SET UPC = ".$i_UPC_U." WHERE UPC = ".$i_UPC."";
             
 			//mysqli_select_db($conn,'university');
             $retval = mysqli_query($conn, $sql);
@@ -35,40 +31,45 @@
          
             echo "Entered data successfully\n";
 			
-			echo " <br> Departments table after deletion <br>";
-			show_departments($conn);
+			echo " <br> Employee table after deletion <br>";
+			show_inventory($conn);
 			
             mysqli_close($conn);
          } 
 		 else if(isset($_POST['show'])){
 			 
-			 show_departments($conn);
+			 show_inventory($conn);
 		 }	 
 		 
 		 else {
       ?>
 	  <br><br><br><br>
-     <p>Enter Departments information for deletion <br> </p>
+     <p>Enter Employee information for deletion <br> </p>
       <form method = "post" action = "<?php $_PHP_SELF ?>">
          <table width = "600" border = "0" cellspacing = "1" cellpadding = "2">
             <tr>
-               <td width = "250">Name</td>
+               <td width = "250">UPC</td>
                <td>
-                  <input name = "i_name" type = "text" id = "i_name">
+                  <input name = "i_UPC" type = "text" id = "i_UPC">
                </td>
             </tr>
-			
-			<tr>
+             <tr>
+               <td width = "250">UPC (UPDATED)</td>
+               <td>
+                  <input name = "i_UPC_U" type = "text" id = "i_UPC_U">
+               </td>
+            </tr>
+            <tr>
                <td width = "250"> </td>
                <td>
-                  <input name = "add" type = "submit" id = "add"  value = "delete">
+                  <input name = "add" type = "submit" id = "add"  value = "update">
                </td>
             </tr>
+            
 		</table>
 	  
    <?php
       }
    ?>
 </div>
-</body>
-</html>
+</body> </html>

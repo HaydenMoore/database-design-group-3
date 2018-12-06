@@ -5,26 +5,25 @@
 <?php include('Navigation.html'); ?>
 <br>
 	<head>
-      <title>Delete Record in Departments Table</title>
+      <title>Insert Record in Customer Table</title>
 	  <link rel="stylesheet" href="main.css">
 	</head>
 <br><br><br><br>
 
 	<?php
-	  
-		require("public_html/dbconnect.php");	  
 		require("public_html/tableshow.php");
+		require("public_html/dbconnect.php");
 	  
          if(isset($_POST['add'])) {
             
+           
+            $i_UPC = $_POST['i_UPC'];
+            $i_dept = $_POST['i_dept'];
             
-            $i_name = $_POST['i_name'];
-            
-			
-			echo " <br> Departments table before deletion <br>";
-			show_departments($conn);
    
-            $sql = "DELETE FROM departments WHERE dept_name='".$i_name."'";
+            $sql = "INSERT INTO customers ".
+               "(customer_ID, customer_name) "."VALUES ".
+               "('$i_UPC','$i_dept')";
             
 			//mysqli_select_db($conn,'university');
             $retval = mysqli_query($conn, $sql);
@@ -35,33 +34,45 @@
          
             echo "Entered data successfully\n";
 			
-			echo " <br> Departments table after deletion <br>";
-			show_departments($conn);
+			echo " <br> Customer table after insertion <br>";
+			show_customer($conn);
 			
             mysqli_close($conn);
          } 
 		 else if(isset($_POST['show'])){
 			 
-			 show_departments($conn);
+			show_customer($conn);
 		 }	 
 		 
 		 else {
       ?>
 	  <br><br><br><br>
-     <p>Enter Departments information for deletion <br> </p>
+     <p>Enter Customer information for insertion <br> </p>
       <form method = "post" action = "<?php $_PHP_SELF ?>">
          <table width = "600" border = "0" cellspacing = "1" cellpadding = "2">
             <tr>
-               <td width = "250">Name</td>
+               <td width = "250">Customer ID</td>
                <td>
-                  <input name = "i_name" type = "text" id = "i_name">
+                  <input name = "i_UPC" type = "text" id = "i_UPC">
                </td>
             </tr>
-			
-			<tr>
+         
+            <tr>
+               <td width = "250">Customer Name</td>
+               <td>
+                  <input name = "i_dept" type = "text" id = "i_dept">
+               </td>
+            </tr>
+     
+            <tr>
+               <td width = "250"></td>
+               <td> </td>
+            </tr>
+         
+            <tr>
                <td width = "250"> </td>
                <td>
-                  <input name = "add" type = "submit" id = "add"  value = "delete">
+                  <input name = "add" type = "submit" id = "add"  value = "insert">
                </td>
             </tr>
 		</table>
@@ -70,5 +81,4 @@
       }
    ?>
 </div>
-</body>
-</html>
+</body> </html>
